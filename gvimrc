@@ -7,10 +7,10 @@ set lines=60
 set guioptions-=T
 
 " Use Menlo 11pt
-set guifont=Menlo:h11
+set guifont=Source_Code_Pro:h11:cANSI
 
-" Sets the percent transparency
-set transparency=5
+" " Sets the percent transparency
+" set transparency=5
 
 
 

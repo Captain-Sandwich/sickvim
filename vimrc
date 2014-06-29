@@ -30,6 +30,7 @@ set numberwidth=1             " using only 1 column (and 1 space) while possible
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
 set wildmode=full             " <Tab> cycles between all matching choices.
+set hidden                    " Allow switching from modified buffers
 
 " Ignore these files when completing
 set wildignore+=*.o,*.obj,.git,*.pyc 
@@ -192,7 +193,7 @@ func WordProcessorMode()
     setlocal expandtab
     map j gj
     map k gk
-    setlocal spell spelllang=en_ca
+    setlocal spell spelllang=de_de
     setlocal wrap
     setlocal linebreak
     setlocal nolist
@@ -200,7 +201,7 @@ func WordProcessorMode()
     setlocal sts=2
     setlocal sw=2
     setlocal cc=
-    setlocal guifont=*
+    " setlocal guifont=*
     " setlocal guifont=Nitti\ Light:h18
     " setlocal linespace=9
     " setlocal guifont=Nitti\ Light:h16
@@ -253,7 +254,7 @@ autocmd! BufNewFile * call LoadTemplate()
 " === Spellcheck
 
 nmap <silent> <leader>s :set spell!<CR>
-set spelllang=en_ca " choose en / en_us / en_ca etc.
+set spelllang=de_de " choose en / en_us / en_ca etc.
 " Put custom spelling additions on Dropbox if possible
 if filereadable(expand("~/Dropbox/Apps/vim/en.utf-8.add"))
     setlocal spellfile="~/Dropbox/Apps/vim/en.utf-8.add"
@@ -266,7 +267,7 @@ map <leader>tags :TlistToggle<CR>
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags" " use exuberant ctags
 nmap ,tagup :!(cd %:p:h;ctags *)<CR>        " rebuild tag index
 set tags=./tags,tags                    " configure Ctags to use global project tags
-let Tlist_Auto_Open = 1                 " automatically open taglist
+" let Tlist_Auto_Open = 1                 " automatically open taglist
 let Tlist_Use_Right_Window = 1          " only open taglist on the right
 let Tlist_Exit_OnlyWindow = 1           " automatically close taglist when we close the window
 " LaTeX support! See http://vim-taglist.sourceforge.net/extend.html
@@ -287,7 +288,13 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let NERDTreeIgnore = ['\.pyc$', '\.aux$', '\.blg$', '\.fdb_latexmk$', '\.fls$', '\.upa$', '\.upb']
 
 
-" === Misc Hacks ============================================================
+" === Misc Hacks =============================================================
 " So that latex-suite always sets 'tex' filetype rather than 'plaintex'
 " sometimes
 let g:tex_flavor='latex'
+
+" === Rainbow Parentheses ====================================================
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
