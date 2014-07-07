@@ -283,6 +283,7 @@ let tlist_make_settings  = 'make;m:makros;t:targets'
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsEditSplit="vertical" " Make UltiSnipsEdit split the window
 
 " === NerdTree ===============================================================
 let NERDTreeIgnore = ['\.pyc$', '\.aux$', '\.blg$', '\.fdb_latexmk$', '\.fls$', '\.upa$', '\.upb']
