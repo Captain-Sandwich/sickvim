@@ -81,3 +81,9 @@
 [submodule "bundle/airline"]
 	path = bundle/airline
 	url = https://github.com/bling/vim-airline
+[submodule "bundle/visual-increment"]
+	path = bundle/visual-increment
+	url = https://github.com/triglav/vim-visual-increment.git
+[submodule "bundle/easy-align"]
+	path = bundle/easy-align
+	url = https://github.com/junegunn/vim-easy-align.git
