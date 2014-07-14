@@ -87,6 +87,3 @@
 [submodule "bundle/easy-align"]
 	path = bundle/easy-align
 	url = https://github.com/junegunn/vim-easy-align.git
-[submodule "bundle/conque"]
-	path = bundle/conque
-	url = https://github.com/dhazel/conque-term.git
