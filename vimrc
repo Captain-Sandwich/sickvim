@@ -20,7 +20,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 " ==========================================================
-" Basic Settings 
+" Basic Settings
 " ==========================================================
 syntax on                     " syntax highlighing
 filetype on                   " try to detect filetypes
@@ -30,10 +30,9 @@ set numberwidth=1             " using only 1 column (and 1 space) while possible
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
 set wildmode=full             " <Tab> cycles between all matching choices.
-set hidden                    " Allow switching from modified buffers
 
 " Ignore these files when completing
-set wildignore+=*.o,*.obj,.git,*.pyc 
+set wildignore+=*.o,*.obj,.git,*.pyc
 set grepprg=ack-grep          " replace the default grep program with ack
 
 " Auto change the directory to the current file I'm working on
@@ -61,7 +60,7 @@ set matchtime=2             " (for only .2 seconds).
 set nowrap                  " don't wrap text
 set linebreak               " don't wrap textin the middle of a word
 set autoindent              " always set autoindenting on
-set tabstop=4               " <tab> inserts 4 spaces 
+set tabstop=4               " <tab> inserts 4 spaces
 set shiftwidth=4            " but an indent level is 2 spaces wide.
 set softtabstop=4           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
@@ -80,6 +79,7 @@ set noautowriteall          " NEVER.
 set noswapfile
 set nobackup
 set nowb
+set hidden                    " Allow switching from modified buffers
 set autoread                " automatically re-read changed files.
 set modeline                " Allow vim options to be embedded in files;
 set modelines=5             " they must be within the first or last 5 lines.
@@ -109,7 +109,7 @@ set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
 " ==========================================================
-" Shortcuts 
+" Shortcuts
 " ==========================================================
 
 " Get back to normal mode faster
@@ -141,8 +141,8 @@ imap <C-W> <C-O><C-W>
 " Open NerdTree
 map <leader>n :NERDTreeToggle<CR>
 
-" Ack searching 
-nmap <leader>a <Esc>:Ack! 
+" Ack searching
+nmap <leader>a <Esc>:Ack!
 
 " Load the Gundo window
 map <leader>g :GundoToggle<CR>
@@ -164,7 +164,7 @@ let g:SuperTabDefaultCompletionType = "context"
 "     activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
 "     execfile(activate_this, dict(__file__=activate_this))
 " EOF
-" 
+"
 " " Load up virtualenv's vimrc if it exists
 " if filereadable($VIRTUAL_ENV . '/.vimrc')
 "     source $VIRTUAL_ENV/.vimrc
@@ -287,6 +287,10 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 " === NerdTree ===============================================================
 let NERDTreeIgnore = ['\.pyc$', '\.aux$', '\.blg$', '\.fdb_latexmk$', '\.fls$', '\.upa$', '\.upb']
 
+" === CtrlP
+" ============================================================================
+let g:ctrlp_map = '<c-b>'
+let g:ctrlp_cmd = 'CtrlPBuffer'
 
 " === Misc Hacks =============================================================
 " So that latex-suite always sets 'tex' filetype rather than 'plaintex'
